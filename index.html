@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>InkFlow - Handwritten to Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Noto Serif SC"', '"Playfair Display"', 'Georgia', 'serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['"Share Tech Mono"', '"Courier New"', 'monospace'],
+              // New font families for specific themes
+              calligraphy: ['"Ma Shan Zheng"', '"Great Vibes"', 'cursive'],
+              handwriting: ['"Long Cang"', '"Indie Flower"', 'cursive'],
+              display: ['Anton', 'sans-serif'],
+              rounded: ['Fredoka', 'sans-serif'],
+              retro: ['"Special Elite"', 'monospace'],
+              // Y2K Fonts
+              pixel: ['"Silkscreen"', 'cursive'],
+              terminal: ['"VT323"', 'monospace'],
+            },
+            colors: {
+              paper: '#fdfbf7',
+              ink: '#2c2c2c',
+              klein: '#002FA7', // Minimal Beast
+              neonPink: '#ff00ff', // Cyber
+              neonBlue: '#00ffff', // Cyber
+              // Y2K Palette
+              y2kPink: '#FF00CC',
+              y2kGreen: '#CCFF00',
+              y2kPurple: '#9900FF',
+              winGray: '#C0C0C0',
+            },
+            backgroundImage: {
+              'halftone': "radial-gradient(circle, #2c2c2c 1px, transparent 1px)",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Load diverse fonts for different themes */
+      @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;600&family=Great+Vibes&family=Indie+Flower&family=Inter:wght@300;400;600&family=Long+Cang&family=Lora:ital,wght@0,400;0,600;1,400&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Share+Tech+Mono&family=Special+Elite&family=Silkscreen&family=VT323&display=swap');
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c1c1c1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8; 
+      }
+      
+      /* Vertical writing mode for Vintage Scroll theme */
+      .writing-vertical-rl {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      /* Ink splash effect helper */
+      .ink-splash-mask {
+        mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+      }
+      
+      /* Typewriter cursor effect */
+      .typewriter-effect::after {
+        content: '|';
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+      
+      /* Glitch effect base */
+      .glitch-text {
+        position: relative;
+      }
+
+      /* Y2K Windows Border Emulation */
+      .win95-border {
+        box-shadow: inset 2px 2px 0px #ffffff, inset -2px -2px 0px #000000;
+      }
+      .win95-border-outset {
+        box-shadow: inset 2px 2px 0px #ffffff, inset -2px -2px 0px #808080, 2px 2px 0px 0px #000000;
+      }
+      .win95-button {
+        box-shadow: inset 2px 2px 0px #ffffff, inset -2px -2px 0px #000000;
+      }
+      .win95-button:active {
+        box-shadow: inset 2px 2px 0px #000000, inset -2px -2px 0px #ffffff;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 text-slate-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
