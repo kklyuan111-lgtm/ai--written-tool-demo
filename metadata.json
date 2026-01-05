@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of InkFlow - Handwritten to Digital test new",
+  "description": "Transform handwritten notes into professional digital publications using AI-powered OCR and styling.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
